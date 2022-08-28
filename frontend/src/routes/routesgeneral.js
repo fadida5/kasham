@@ -15,6 +15,8 @@ import EditUserLayout from "layouts/general/authentication/EditUserScreen";
 
 import AdminDashboardLayout from "layouts/general/adminscreens/AdminDashboardLayout";
 
+import FormView from "views/forms/form";
+
 import EditPikodScreen from "layouts/general/unitforms/editformslayouts/EditPikodScreen";
 import EditOgdaScreen from "layouts/general/unitforms/editformslayouts/EditOgdaScreen";
 import EditHativaScreen from "layouts/general/unitforms/editformslayouts/EditHativaScreen";
@@ -30,6 +32,7 @@ import HativaDashboardLayout from "layouts/general/userhativa/HativaDashboardLay
 import OgdaDashboardLayout from "layouts/general/userogda/OgdaDashboardLayout";
 import PikodDashboardLayout from "layouts/general/userpikod/PikodDashboardLayout";
 import SuperAdminRoute from "auth/SuperAdminRoute";
+import LoggedinLayout from "layouts/LoggedinLayout";
 
 const routesgeneral =
     (
@@ -44,17 +47,18 @@ const routesgeneral =
             <AdminRoute path="/manageusers" exact component={ManageUsersLayout} />
             <AdminRoute path="/edituser/:userid" exact component={EditUserLayout} />
 
-            <AdminRoute exact path="/editpikod/:pikodid" exact component={EditPikodScreen} />
-            <AdminRoute exact path="/editogda/:ogdaid" exact component={EditOgdaScreen} />
-            <AdminRoute exact path="/edithativa/:hativaid" exact component={EditHativaScreen} />
+            <AdminRoute exact path="/editpikod/:pikodid" component={EditPikodScreen} />
+            <AdminRoute exact path="/editogda/:ogdaid" component={EditOgdaScreen} />
+            <AdminRoute exact path="/edithativa/:hativaid" component={EditHativaScreen} />
 
-            <AdminRoute exact path="/addpikod" exact component={AddPikodScreen} />
-            <AdminRoute exact path="/addogda" exact component={AddOgdaScreen} />
-            <AdminRoute exact path="/addhativa" exact component={AddHativaScreen} />
-            <AdminRoute exact path="/addgdod" exact component={AddGdodScreen} />
+            <AdminRoute exact path="/addpikod" component={AddPikodScreen} />
+            <AdminRoute exact path="/addogda" component={AddOgdaScreen} />
+            <AdminRoute exact path="/addhativa" component={AddHativaScreen} />
+            <AdminRoute exact path="/addgdod" component={AddGdodScreen} />
 
             <AdminRoute path="/dashboard" exact component={AdminDashboardLayout} />
             {/*////////////////////////////////////////Gdod User//////////////////////////////////////////////////*/}
+            <LoggedinLayout path="/form" exact component={FormView}/>
             <GdodRoute path="/gdoddashboard/:gdodid" exact component={GdodDashboardLayout} />
             {/*////////////////////////////////////////Gdod User//////////////////////////////////////////////////*/}
 
