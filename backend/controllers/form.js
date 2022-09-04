@@ -1,4 +1,4 @@
-const Form = require("../../models/form/form");
+const Form = require("../models/form");
 
 /*exports.findById = (req, res, next, id) => {
     Form.findById(id).exec((err, form) => {

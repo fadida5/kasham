@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router()
 
-const { create, find, update, remove, findById,read,updateform} = require('../../controllers/form/form');
+const { create, find, update, remove, findById,read,updateform} = require('../controllers/form');
 
 // find spec 
 router.get('/form/:id', read);

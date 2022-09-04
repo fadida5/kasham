@@ -47,18 +47,9 @@ const routesgeneral =
             <AdminRoute path="/manageusers" exact component={ManageUsersLayout} />
             <AdminRoute path="/edituser/:userid" exact component={EditUserLayout} />
 
-            <AdminRoute exact path="/editpikod/:pikodid" component={EditPikodScreen} />
-            <AdminRoute exact path="/editogda/:ogdaid" component={EditOgdaScreen} />
-            <AdminRoute exact path="/edithativa/:hativaid" component={EditHativaScreen} />
-
-            <AdminRoute exact path="/addpikod" component={AddPikodScreen} />
-            <AdminRoute exact path="/addogda" component={AddOgdaScreen} />
-            <AdminRoute exact path="/addhativa" component={AddHativaScreen} />
-            <AdminRoute exact path="/addgdod" component={AddGdodScreen} />
-
             <AdminRoute path="/dashboard" exact component={AdminDashboardLayout} />
             {/*////////////////////////////////////////Gdod User//////////////////////////////////////////////////*/}
-            <LoggedinLayout path="/form" exact component={FormView}/>
+            <Route path="/form/:id" exact component={FormView}/>
             <GdodRoute path="/gdoddashboard/:gdodid" exact component={GdodDashboardLayout} />
             {/*////////////////////////////////////////Gdod User//////////////////////////////////////////////////*/}
 

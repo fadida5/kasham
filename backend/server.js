@@ -100,6 +100,11 @@ app.use('/api',zmplanlogRoutes)
 app.use('/api', zshigraRoutes)
 app.use('/api', nexttreatRoutes)
 
+//new
+const formRoutes = require('./routes/form');
+app.use('/api', formRoutes)
+
+
 
 if(process.env.NODE_ENV === 'production'){
     //set static folder
