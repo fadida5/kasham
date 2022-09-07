@@ -268,8 +268,14 @@ const FormCreator = ({ match }) => {
                                                                     })
                                                                 )
                                                             }}
-                                                                value={p.categoryId} type="number" placeholder="קטגוריה" 
-                                                                style={{width: "8rem", padding: '0', margin: '0'}}/>
+                                                                value={p.categoryId} type="select" placeholder="קטגוריה" 
+                                                                style={{width: "8rem", padding: '0', margin: '0'}}>
+                                                                     <option value={""}>קטגוריות</option>
+                                                                    {categoryKey.map((category, index) => (
+                                                                    <option value={category.id}>{category.category}</option>
+                                                                    // <option value={"asd"}>asd</option>
+                                                                    ))}
+                                                            </Input>
                                                         </div>
                                                     </Col>
                                                     <Col xs={12} md={4}>
@@ -283,8 +289,13 @@ const FormCreator = ({ match }) => {
                                                                     })
                                                                 )
                                                             }}
-                                                                value={p.type} type="number" placeholder="סוג" 
-                                                                style={{width: "8rem", padding: '0', margin: '0'}}/>
+                                                                value={p.type} type="select" placeholder="סוג" 
+                                                                style={{width: "8rem", padding: '0', margin: '0'}}>
+                                                                    <option value="">בחר סוג</option>
+                                                                    <option value="number">מספר</option>
+                                                                    <option value="text">טקסט</option>
+                                                                    <option value="date">תאריך</option>
+                                                                    </Input>
                                                         </div>
                                                     </Col>
                                                     <Col xs={12} md={4}>
