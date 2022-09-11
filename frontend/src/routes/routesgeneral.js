@@ -15,7 +15,8 @@ import EditUserLayout from "layouts/general/authentication/EditUserScreen";
 
 import AdminDashboardLayout from "layouts/general/adminscreens/AdminDashboardLayout";
 
-import FormView from "views/forms/form";
+import FormView from "views/forms/formCreator";
+import allFormsView from "views/forms/allForms";
 
 import EditPikodScreen from "layouts/general/unitforms/editformslayouts/EditPikodScreen";
 import EditOgdaScreen from "layouts/general/unitforms/editformslayouts/EditOgdaScreen";
@@ -33,6 +34,7 @@ import OgdaDashboardLayout from "layouts/general/userogda/OgdaDashboardLayout";
 import PikodDashboardLayout from "layouts/general/userpikod/PikodDashboardLayout";
 import SuperAdminRoute from "auth/SuperAdminRoute";
 import LoggedinLayout from "layouts/LoggedinLayout";
+import allForms from "views/forms/allForms";
 
 const routesgeneral =
     (
@@ -50,6 +52,7 @@ const routesgeneral =
             <AdminRoute path="/dashboard" exact component={AdminDashboardLayout} />
             {/*////////////////////////////////////////Gdod User//////////////////////////////////////////////////*/}
             <Route path="/form/:id" exact component={FormView}/>
+            <Route path="/allForms" exact component={allForms}/>
             <GdodRoute path="/gdoddashboard/:gdodid" exact component={GdodDashboardLayout} />
             {/*////////////////////////////////////////Gdod User//////////////////////////////////////////////////*/}
 
