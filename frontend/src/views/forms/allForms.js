@@ -29,7 +29,7 @@ import { toast } from "react-toastify";
 import { isAuthenticated } from "auth";
 
 const AllForms = ({ match }) => {
-    const [forms, setForms] = useState({});
+    const [forms, setForms] = useState([]);
 
     async function init() {
         loadForms();
@@ -54,11 +54,21 @@ const AllForms = ({ match }) => {
 
     return (
        <div>
-            {/* {forms.map((form) => (
-            <h1>
-                {form.formName}
-            </h1>
-            ))}  */}
+        <Row>
+            {forms.map((form) => (
+            <Card style={{ borderRadius: "15px", backgroundColor: "#dee9ed", boxShadow: "0 0 1rem 0", height: "15rem", width: "15rem", margin: "1rem" }}>
+            <CardHeader color="#BCB6FF" stats icon>
+                <h1>{form.formName}</h1>
+                {form.fields ? form.fields.map((field) => (
+                    <h2>{field.field}</h2>
+                 )):null} 
+                {form.category ? form.category.map((category) => (
+                    <h2>{category.category}</h2>
+                 )):null} 
+            </CardHeader>
+            </Card>
+            ))} 
+            </Row>
        </div>
     );
 };
